@@ -1,0 +1,94 @@
+{
+  "app": {
+    "name": "Alain",
+    "description": "Ng-zorro admin panel front-end framework"
+  },
+  "user": {
+    "name": "",
+    "avatar": "./assets/tmp/img/avatar.jpg",
+    "email": ""
+  },
+  "menu": [
+    {
+      "text": "主导航",
+      "i18n": "menu.main",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [
+        {
+          "text": "仪表盘",
+          "i18n": "menu.dashboard",
+          "icon": "anticon-dashboard",
+          "children": [
+            {
+              "text": "仪表盘V1",
+              "link": "/dashboard/v1",
+              "i18n": "menu.dashboard.v1"
+            },
+            {
+              "text": "监控页",
+              "link": "/dashboard/monitor",
+              "i18n": "menu.dashboard.monitor"
+            }
+          ]
+        },
+        {
+          "text": "快捷菜单",
+          "i18n": "menu.shortcut",
+          "icon": "anticon-rocket",
+          "shortcutRoot": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "Tables",
+      "i18n": "menu.pro",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [
+        {
+          "text": "List",
+          "i18n": "menu.list",
+          "icon": "anticon-appstore",
+          "children": [
+            {
+              "text": "Supporters",
+              "link": "/pro/list/sup-list"
+            },
+            {
+              "text": "Donations",
+              "link": "/pro/list/table-list",
+              "i18n": "menu.list.searchtable",
+              "shortcut": false
+            }
+          ]
+        },
+        {
+          "text": "Account",
+          "i18n": "menu.account",
+          "icon": "anticon-user",
+          "link": "/pro/account/settings"        
+        }
+      ]
+    },
+    {
+      "text": "More",
+      "i18n": "menu.more",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [
+        {
+          "text": "Demo",
+          "link": "/data-v/relation",
+          "icon": "anticon-bulb"
+        },
+        {
+          "text": "About",
+          "link": "/pro/list/card-list",
+          "icon": "anticon-info"
+        }
+      ]
+    }
+  ]
+}

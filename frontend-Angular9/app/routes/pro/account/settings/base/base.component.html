@@ -1,0 +1,44 @@
+<nz-spin [nzSpinning]="userLoading">
+  <div class="main" *ngIf="user">
+    <div class="left">
+      <form nz-form nzLayout="vertical" #f="ngForm" (submit)="save()" se-container="1">
+        <se label="Email" error="请Enter a valid email!">
+          <p>{{ data.email }}</p>
+        </se>
+        <se label="User Name" error="Enter a valid user name!">
+          <input nz-input [(ngModel)]="user.userName" name="name" required />
+        </se>
+        <se label="Campaign Name " error="Enter a valid campaign!">
+          <input nz-input [(ngModel)]="user.campaignName" name="campaignName" required />
+        </se>
+        <se label="Bio">
+          <textarea
+            nz-input
+            [(ngModel)]="user.profile"
+            name="profile"
+            [nzAutosize]="{ minRows: 4, maxRows: 10 }"
+            placeholder="Tell me a little about yourself"
+          ></textarea>
+        </se>
+        <!-- <se label="Region">
+          <nz-select [(ngModel)]="user.country" name="country" required>
+            <nz-option nzLabel="US" nzValue="USA"></nz-option>
+          </nz-select>
+        </se> -->
+        <se>
+          <button nz-button nzType="primary" [disabled]="f.invalid">Commit Changes</button>
+        </se>
+      </form>
+    </div>
+    <div class="right hidden-mobile">
+      <div class="avatar_title">Avatar</div>
+      <div class="avatar"><img src="{{ avatar }}" alt="Avatar" /></div>
+      <!-- <nz-upload nzAction="/user/avatar" [nzShowUploadList]="false">
+        <button nz-button class="button_view">
+          <i nz-icon nzType="upload"></i>
+          <span>Upload</span>
+        </button>
+      </nz-upload> -->
+    </div>
+  </div>
+</nz-spin>

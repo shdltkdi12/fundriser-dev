@@ -1,0 +1,169 @@
+<div class="alain-default__content-title">
+  <h1>
+    Overview
+    <small>Welcome !</small>
+  </h1>
+</div>
+<div nz-row nzGutter="16">
+  <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+    <div nz-row nzType="flex" nzAlign="middle" class="bg-primary rounded-md">
+      <div nz-col nzSpan="12" class="p-md text-white">
+        <div class="h2 mt0">${{ oneTimeData?.total_donations_amount }}</div>
+        <p class="text-nowrap mb0">Total Donations Raised</p>
+      </div>
+      <div nz-col nzSpan="12">
+        <g2-mini-bar
+          *ngIf="webSite"
+          height="35"
+          color="#fff"
+          borderWidth="3"
+          [padding]="[5, 30]"
+          [data]="webSite"
+          tooltipType="mini"
+        ></g2-mini-bar>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+    <div nz-row nzType="flex" nzAlign="middle" class="bg-success rounded-md">
+      <div nz-col nzSpan="12" class="p-md text-white">
+        <div class="h2 mt0">${{ recurringData?.total_recurring_amount }}</div>
+        <p class="text-nowrap mb0">Total Recurring Payments</p>
+      </div>
+      <div nz-col nzSpan="12">
+        <g2-mini-bar
+          *ngIf="webSite"
+          height="35"
+          color="#fff"
+          borderWidth="3"
+          [padding]="[5, 30]"
+          [data]="webSite"
+          tooltipType="mini"
+        ></g2-mini-bar>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+    <div nz-row nzType="flex" nzAlign="middle" class="bg-orange rounded-md">
+      <div nz-col nzSpan="12" class="p-md text-white">
+        <div class="h2 mt0">{{ oneTimeData?.total_num_donations }}</div>
+        <p class="text-nowrap mb0">Unique Donations</p>
+      </div>
+      <div nz-col nzSpan="12">
+        <g2-mini-bar
+          *ngIf="webSite"
+          height="35"
+          color="#fff"
+          borderWidth="3"
+          [padding]="[5, 30]"
+          [data]="webSite"
+          tooltipType="mini"
+        ></g2-mini-bar>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+    <div nz-row nzType="flex" nzAlign="middle" class="bg-magenta rounded-md">
+      <div nz-col nzSpan="12" class="p-md text-white">
+        <div class="h2 mt0">{{ recurringData?.total_num_recurring }}</div>
+        <p class="text-nowrap mb0">Recurring Payments</p>
+      </div>
+      <div nz-col nzSpan="12">
+        <g2-mini-bar
+          *ngIf="webSite"
+          height="35"
+          color="#fff"
+          borderWidth="3"
+          [padding]="[5, 30]"
+          [data]="webSite"
+          tooltipType="mini"
+        ></g2-mini-bar>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Second section-->
+<div class="px-lg">
+  <nz-card [nzTitle]="growthTitle" [nzBordered]="false">
+    <ng-template #growthTitle>
+      Recent Data
+    </ng-template>
+    <g2-timeline *ngIf="offlineChartData" [data]="offlineChartData" [height]="289" [titleMap]="{ y1: 'Amount', y2: 'Fee' }"></g2-timeline>
+  </nz-card>
+</div>
+<!-- Third section-->
+<div nz-row nzGutter="16">
+  <!-- <div nz-col nzXs="24" nzMd="12">
+    <nz-card [nzBordered]="false" [nzTitle]="salesTitle">
+      <ng-template #salesTitle>
+        Sales Statistics
+        <small class="text-sm font-weight-normal">Business Expectations & Retail Sales Statistics</small>
+      </ng-template>
+      <g2-bar *ngIf="salesData" height="275" [data]="salesData"></g2-bar>
+    </nz-card>
+  </div> -->
+  <!-- 
+  <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6">
+    <g2-card [title]="'app.analysis.total-sales' | translate" total="¥ 126,560" contentHeight="44px" [action]="action1" [footer]="footer1">
+      <ng-template #action1>
+        <i nz-tooltip [nzTooltipTitle]="'app.analysis.introduce' | translate" nz-icon nzType="info-circle"></i>
+      </ng-template>
+      <trend flag="up" style="display: block; margin-top: 2px;">
+        {{ 'app.analysis.week' | translate }}
+        <span class="pl-sm">12%</span>
+      </trend>
+      <trend flag="down">
+        {{ 'app.analysis.day' | translate }}
+        <span class="pl-sm">11%</span>
+      </trend>
+      <ng-template #footer1>
+        <p class="text-truncate mb0">
+          {{ 'app.analysis.day-sales' | translate }}
+          <span class="ml-sm">￥12,423</span>
+        </p>
+      </ng-template>
+    </g2-card>
+  </div>
+  <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6">
+    <g2-card [title]="'app.analysis.total-sales' | translate" total="¥ 126,560" contentHeight="44px" [action]="action1" [footer]="footer1">
+      <ng-template #action1>
+        <i nz-tooltip [nzTooltipTitle]="'app.analysis.introduce' | translate" nz-icon nzType="info-circle"></i>
+      </ng-template>
+      <trend flag="up" style="display: block; margin-top: 2px;">
+        {{ 'app.analysis.week' | translate }}
+        <span class="pl-sm">12%</span>
+      </trend>
+      <trend flag="down">
+        {{ 'app.analysis.day' | translate }}
+        <span class="pl-sm">11%</span>
+      </trend>
+      <ng-template #footer1>
+        <p class="text-truncate mb0">
+          {{ 'app.analysis.day-sales' | translate }}
+          <span class="ml-sm">￥12,423</span>
+        </p>
+      </ng-template>
+    </g2-card>
+  </div>
+  <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6">
+    <g2-card [title]="'app.analysis.total-sales' | translate" total="¥ 126,560" contentHeight="44px" [action]="action1" [footer]="footer1">
+      <ng-template #action1>
+        <i nz-tooltip [nzTooltipTitle]="'app.analysis.introduce' | translate" nz-icon nzType="info-circle"></i>
+      </ng-template>
+      <trend flag="up" style="display: block; margin-top: 2px;">
+        {{ 'app.analysis.week' | translate }}
+        <span class="pl-sm">12%</span>
+      </trend>
+      <trend flag="down">
+        {{ 'app.analysis.day' | translate }}
+        <span class="pl-sm">11%</span>
+      </trend>
+      <ng-template #footer1>
+        <p class="text-truncate mb0">
+          {{ 'app.analysis.day-sales' | translate }}
+          <span class="ml-sm">￥12,423</span>
+        </p>
+      </ng-template>
+    </g2-card>
+  </div> -->
+</div>

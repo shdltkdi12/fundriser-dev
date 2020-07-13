@@ -1,0 +1,34 @@
+<nz-list nzItemLayout="horizontal">
+  <nz-list-item [nzActions]="[passwordOp]">
+    <ng-template #passwordOp>
+      <a (click)="msg.success('Edit')">Modify</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Change Password" [nzDescription]="passwordDesc">
+      <ng-template #passwordDesc> Current password strength：<span class="text-green">strong</span> </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[phoneOp]">
+    <ng-template #phoneOp>
+      <a (click)="msg.success('Edit')">Modify</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Phone Number" [nzDescription]="phoneDesc">
+      <ng-template #phoneDesc> </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[questionOp]">
+    <ng-template #questionOp>
+      <a (click)="msg.success('Edit')">Modify</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Security Question" [nzDescription]="questionDesc">
+      <ng-template #questionDesc> </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[emailOp]">
+    <ng-template #emailOp>
+      <a (click)="msg.success('Edit')">Modify</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Backup email" [nzDescription]="emailDesc">
+      <ng-template #emailDesc> </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+</nz-list>
