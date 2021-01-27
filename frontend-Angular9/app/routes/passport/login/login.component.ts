@@ -27,18 +27,7 @@ export class UserLoginComponent implements OnDestroy {
     @Optional()
     @Inject(ReuseTabService)
     private reuseTabService: ReuseTabService,
-    @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService,
-    private startupSrv: StartupService,
-    public http: _HttpClient,
-    public msg: NzMessageService,
-  ) {
-    this.form = fb.group({
-      email: [null, [Validators.required]],
-      password: [null, [Validators.required]],
-      mobile: [null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
-      captcha: [null, [Validators.required]],
-      remember: [true],
-    });
+
     modalSrv.closeAll();
   }
   // #region fields
